@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.PartnersSection)Model.Content;
+}
+
+<section class="py-[4rem] bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-row items-center justify-between ">
+            <img class="!w-[150px]" src="@content.PartnerLogo1.Url()" />
+            <img class="!w-[150px]" src="@content.PartnerLogo2.Url()" />
+            <img class="!w-[150px]" src="@content.PartnerLogo3.Url()" />
+            <img class="!w-[150px]" src="@content.PartnerLogo4.Url()" />
+            <img class="!w-[150px]" src="@content.PartnerLogo5.Url()" />
+            <img class="!w-[150px]" src="@content.PartnerLogo6.Url()" />
+        </div>
+    </div>
+</section>

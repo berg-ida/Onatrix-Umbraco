@@ -1,0 +1,53 @@
+﻿@import "tailwindcss";
+
+@theme {
+    --color-primary: #4F5955;
+    --color-primary-light: #606966;
+    --color-secondary: #D9C3A9;
+    --color-beige: #F2EDDC;
+    --color-bg: #F7F7F7;
+    --color-white: #FFFFFF;
+    --color-black: #0E0E0E;
+    --color-body-text: #535656;
+    --color-body-text-100: #9999999;
+    --color-border: #EAEAEA;
+    --color-line: #ECECEC;
+    --font-poppins: "poppins", sans-serif;
+    --text-rte-xl: 4.375rem;
+    --text-rte-lg: 2.5rem;
+    --text-rte-md: 1.25rem;
+    --text-rte-sm: 1rem;
+    --text-rte-xs: 0.875rem;
+}
+
+body {
+    @apply font-poppins;
+}
+
+.rte h3 {
+    @apply text-[2.5rem] text-primary font-bold;
+}
+
+.current a {
+    @apply text-secondary;
+}
+
+.rte-ul {
+    @apply list-disc pl-5 mt-3;
+}
+
+.rte-ul li {
+    @apply text-rte-xs text-body-text mb-3;
+}
+
+.rte-ul li::marker {
+    @apply text-secondary;
+}
+
+.rte p {
+    @apply mb-3;
+}
+
+img {
+    @apply w-full h-auto object-cover;
+}

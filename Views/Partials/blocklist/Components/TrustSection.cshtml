@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TrustSection)Model.Content;
+}
+
+<section class="bg-white bg-no-repeat"
+        style="background-image: url('/images/bg-image.svg');
+               background-position: center;">
+    <div class="max-w-7xl mx-auto px-4 pt-[4rem]">
+        <div class="flex flex-col gap-2 items-center pb-[1rem]">
+            <div class="rte">@Html.Raw(content.TrustTitle)</div>
+        </div>
+        <div class="flex flex-col gap-4 items-center pb-[4rem]">
+            <div class="rte px-[16rem]">@Html.Raw(content.TrustText)</div>
+            @if (content.TrustLink != null)
+            {
+                <a class="bg-primary text-white py-3 px-10 no-underline rounded cursor-pointer font-bold" href="@content.TrustLink.Url">@content.TrustLink.Name</a>
+            }
+        </div>
+        <div>
+            @if (content.TrustImage != null)
+            {
+                <img src="@content.TrustImage.Url()" />
+            } 
+        </div>
+    </div>
+</section>

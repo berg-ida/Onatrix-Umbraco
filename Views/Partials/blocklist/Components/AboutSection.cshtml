@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.AboutSection)Model.Content;
+}
+
+<section class="pb-[5rem]">
+    <div class="container mx-auto flex flex-row gap-16">
+        <div class=" w-7/12 flex flex-col gap-8">
+            <div class="px-[2rem]">
+                <p class="text-secondary font-bold text-[.875rem] uppercase">@content.AboutLabel</p>
+                <h2 class="text-primary font-bold !text-[40px]">@content.AboutTitle</h2>
+            </div>
+            <div class="px-[2rem] flex flex-col gap-2">
+                <div class="rte">@Html.Raw(content.AboutText)</div>
+            </div>
+            <div class="px-[2rem]">
+                @if (content.AboutSignature != null)
+                {
+                    <img class="!w-[160px]" src="@content.AboutSignature.Url()" /> 
+                }
+                <p class="text-body-text font-normal">@content.AboutSignatureText</p>
+            </div>
+        </div>
+        <div>
+            <p>Form</p>
+        </div>
+    </div>
+</section>

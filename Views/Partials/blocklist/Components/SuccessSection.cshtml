@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.SuccessSection)Model.Content;
+}
+
+<section class="bg-primary bg-no-repeat relative overflow-visable"
+        style="background-image: url('/images/bg-image2.svg');
+               background-position: top;">
+    <div class="max-w-7xl mx-auto px-4 pt-[4rem] relative z-10">
+        <div class="flex flex-col items-center">
+            <p class="text-secondary font-bold text-[.875rem] uppercase">@content.SuccessLabel</p>
+            <p class="text-white font-bold text-[40px]">@content.SuccessTitle</p>
+        </div>
+
+        <div class="flex flex-row justify-between gap-4">
+            @if (content.SuccessStories != null)
+            {
+                foreach (var block in content.SuccessStories)
+                {
+                    var story = (ContentModels.SuccessStories)block.Content;
+                    <div class="w-1/3 pb-[3rem]">
+                        <div class="flex flex-col">
+                            <p class="text-secondary font-semibold text-[4.5rem] text-center">@story.SuccessStoryTitle</p>
+                            <p class="text-white font-semibold text-[1rem] text-center">@story.SuccessStoryText</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+            <div class="flex justify-center relative z-10">
+                @if (content.SuccessImage != null)
+                {
+                    <div class="relative max-w-7xl mx-auto">
+                        <img class="!w-[900px] relative z-[2] w-full h-auto object-cover" src="@content.SuccessImage.Url()" />
+                    </div>
+                    
+                }
+            </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full h-[10rem] bg-white z-0"></div>
+</section>
