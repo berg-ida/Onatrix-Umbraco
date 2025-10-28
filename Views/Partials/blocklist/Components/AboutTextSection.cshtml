@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.AboutTextSection)Model.Content;
+}
+
+<section class="pt-[7rem] pb-[7rem]">
+    <div class="flex flex-row gap-12 max-w-7xl mx-auto">
+        <div class="!w-1/3 flex flex-col gap-3">
+            @if (content.AboutTextImage != null)
+            {
+                <img class="" src="@content.AboutTextImage.Url()" />
+            }
+            <div class="rte text-primary">@Html.Raw(content.AboutTextImageName)</div>
+        </div>
+        <div class="!w-2/3">
+            <div class="rte flex flex-col gap-1">@Html.Raw(content.AboutText)</div>
+        </div>
+    </div>
+</section>

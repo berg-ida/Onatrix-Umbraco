@@ -200,9 +200,9 @@
           "label": "Body-Light",
           "data": {
             "tag": "span",
-            "class": "text-body-text-100"
+            "class": "text-body-light"
           },
-          "appearence": { "style": "background-color: #9999999; color: #fff; padding:5px" }
+          "appearence": { "style": "background-color: #9C9EA6; color: #fff; padding:5px" }
         }
       ]
     }

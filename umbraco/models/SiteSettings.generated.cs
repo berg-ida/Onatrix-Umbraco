@@ -55,7 +55,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.0+a504fd1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("contactAdress")]
-		public virtual string ContactAdress => this.Value<string>(_publishedValueFallback, "contactAdress");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactAdress => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactAdress");
 
 		///<summary>
 		/// Contact Email
@@ -63,7 +63,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.0+a504fd1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("contactEmail")]
-		public virtual string ContactEmail => this.Value<string>(_publishedValueFallback, "contactEmail");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactEmail => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactEmail");
 
 		///<summary>
 		/// Contact Phone
@@ -71,7 +71,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.0+a504fd1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("contactPhone")]
-		public virtual string ContactPhone => this.Value<string>(_publishedValueFallback, "contactPhone");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactPhone => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactPhone");
 
 		///<summary>
 		/// Platform List
@@ -95,6 +95,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.0+a504fd1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("siteName")]
-		public virtual string SiteName => this.Value<string>(_publishedValueFallback, "siteName");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString SiteName => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "siteName");
 	}
 }
