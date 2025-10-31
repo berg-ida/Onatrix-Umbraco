@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactCard)Model.Content;
+}
+
+<div class="!p-6 flex flex-col gap-4 bg-primary mt-[2rem] rounded">
+    <h2 class="text-beige text-[1.375rem] font-semibold">@content.ContactCardTitle</h2>
+    <p class="text-beige text-[0.875rem] font-normal">@content.ContactCardText</p>
+    <div class="bg-white rounded flex flex-row justify-between items-center p-4">
+        <p class="text-body-light text-[0.875] font-normal">@content.ContactCardEmail</p>
+        <i class="fa-regular fa-envelope text-body-light"></i>
+    </div>
+</div>

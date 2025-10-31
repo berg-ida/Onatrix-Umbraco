@@ -1,11 +1,18 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Onatrix.ViewModels
 @{
     var content = (ContentModels.AboutSection)Model.Content;
+    var settings = Model.Settings as ContentModels.AboutSectionSettings;
+
+    var formVM = new FormViewModel
+        {
+            Options = settings?.FormRequestOptions ?? []
+        };
 }
 
 <section class="pb-[5rem]">
-    <div class="container mx-auto flex flex-row gap-16">
+    <div class="container mx-auto flex flex-row gap-16 max-w-7xl px-4">
         <div class=" w-7/12 flex flex-col gap-8">
             <div class="px-[2rem]">
                 <p class="text-secondary font-bold text-[.875rem] uppercase">@content.AboutLabel</p>
@@ -22,8 +29,27 @@
                 <p class="text-body-text font-normal">@content.AboutSignatureText</p>
             </div>
         </div>
-        <div>
-            <p>Form</p>
+        <div class="flex flex-col w-5/12 shadow-lg -mt-[11rem] z-[99]">
+            <div class="bg-primary">
+                <p class="text-beige py-[1.5rem] px-[2rem] text-[1.875rem] font-bold">@content.FormTitle</p>
+            </div>
+            <p class="text-sm py-[1.5rem] px-[2rem] italic">@content.FormDescription</p>
+
+            <partial name="Partials/Forms/_Form" model="formVM" />
+
+            @if (TempData["FormSuccess"] != null)
+            {
+                <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormSuccess"]
+                </div>
+            }
+            else if (TempData["FormError"] != null)
+            {
+                <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormError"]
+                </div>
+            }
+            
         </div>
     </div>
 </section>
