@@ -354,12 +354,6 @@
   .w-1\/4 {
     width: calc(1/4 * 100%);
   }
-  .w-1\/6 {
-    width: calc(1/6 * 100%);
-  }
-  .w-1\/7 {
-    width: calc(1/7 * 100%);
-  }
   .w-1\/8 {
     width: calc(1/8 * 100%);
   }
@@ -564,9 +558,6 @@
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
   }
-  .pt-4 {
-    padding-top: calc(var(--spacing) * 4);
-  }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
@@ -587,9 +578,6 @@
   }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
-  }
-  .pb-10 {
-    padding-bottom: calc(var(--spacing) * 10);
   }
   .pb-\[1\.5rem\] {
     padding-bottom: 1.5rem;

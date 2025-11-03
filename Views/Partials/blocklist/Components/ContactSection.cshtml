@@ -1,7 +1,10 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-    var content = (ContentModels.ContactSection)Model.Content;
+	var content = (ContentModels.ContactSection)Model.Content;
+	var settings = Model.Settings as ContentModels.ContactSettings;
+
+	var sectionColor = settings?.ContactBgColor?.Color ?? "#F7F7F7";
 
 	var rootContent = Umbraco.ContentAtRoot();
 	var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
@@ -12,7 +15,8 @@
 
 <section class="bg-bg bg-no-repeat"
 		style="background-image: url('/images/Contact-bg.svg');
-			   background-position: 15%">
+			   background-position: 15%;
+			   background-color:@sectionColor">
 	<div class="max-w-7xl mx-auto px-4 flex flex-row gap-16 pt-[4rem]">
 		<div class="w-1/2">
 			@if (content.ContactImage != null)
