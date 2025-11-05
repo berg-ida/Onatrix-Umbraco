@@ -1,0 +1,36 @@
+﻿@using Onatrix.ViewModels
+@model FormViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "callbackForm" }))
+{
+	<div>
+		<div>
+			<label asp-for="Name" class="sr-only"></label>
+			<input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(XmlConfigurationExtensions => XmlConfigurationExtensions.Name)" class="" />
+			<span asp-validation-for="Name"></span>
+		</div>
+		<div>
+			<label asp-for="Email" class="sr-only"></label>
+			<input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(XmlConfigurationExtensions => XmlConfigurationExtensions.Email)" class="" />
+			<span asp-validation-for="Email"></span>
+		</div>
+		<div>
+			<label asp-for="Phone" class="sr-only"></label>
+			<input asp-for="Phone" type="text" placeholder="@Html.DisplayNameFor(XmlConfigurationExtensions => XmlConfigurationExtensions.Phone)" class="" />
+			<span asp-validation-for="Phone"></span>
+		</div>
+		<div>
+			<label asp-for="SelectedOption" class="sr-only"></label>
+			<select asp-for="SelectedOption" class="">
+				<option value="" disabled hidden selected>Please select an option</option>
+
+				@foreach (var o in Model.Options)
+				{
+					<option value="@o">@o</option>
+				}
+
+			</select>
+			<span asp-validation-for="SelectedOption"></span>
+		</div>
+	</div>
+}
