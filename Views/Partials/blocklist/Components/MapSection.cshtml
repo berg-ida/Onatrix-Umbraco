@@ -11,24 +11,37 @@
 		};
 }
 
-<section>
-	<div>
-		<div>
-			<partial name="Partials/Forms/_MapForm" model="formVM" />
+<section class="relative">
+	<div class="absolute inset-0 z-0">
+		@if (content.MapBgImage != null)
+		{
+			<img src="@content.MapBgImage.Url()" class="w-full h-full object-cover" />
+		}
+	</div>
+
+	<div class=" relative z-10 container max-w-7xl mx-auto px-4 flex justify-center">
+		<div class="w-4/5 bg-white flex flex-col items-center p-10 gap-2 shadow-xl rounded-lg translate-y-50 mb-50">
+			<p class="text-[.875rem] text-secondary font-bold uppercase">@content.FormLabel</p>
+			<h2 class="font-bold text-primary text-[2.5rem] w-3/5 text-center">@content.FormTitle</h2>
+			<p class="text-body-text italic w-2/3 text-center pb-4">@content.FormBody</p>
+
+			<div class="w-full">
+				<partial name="Partials/Forms/_MapForm" model="formVM" />
 
 			@if (TempData["FormSuccess"] != null)
 			{
-				<div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+				<div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md text-center">
 					@TempData["FormSuccess"]
 				</div>
 			}
 			else if (TempData["FormError"] != null)
 			{
-				<div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+				<div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md text-center">
 					@TempData["FormError"]
 				</div>
 			}
-
+			</div>
+			
 		</div>
 	</div>
 </section>
